@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="../WebExtension.js"></script>
+<script src="AddressLookup.js"></script>
+</head>
+<body>
+
+Zipcode <input id="zipcode" type="text" value="100-0006"><br>
+Prefecture <input id="pref" type="text" value=""><br>
+Address <input id="address" type="text" value="">
+
+<p>
+  This example shows how to call a REST API and handle the response.<br>
+  The "Lookup" button was dynamically added by WebExtension when this page was loaded.<br>
+  When you click the button, an AddressLookup REST API is called through a HTTP proxy.<br>
+  Once the responce came back successfully, the address in the response is set to the form on this page.
+</p>
+
+</body>
+</html>

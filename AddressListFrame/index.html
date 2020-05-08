@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="../WebExtension.js"></script>
+<script src="AddressLookup.js"></script>
+</head>
+<body>
+
+Zipcode <input id="zipcode" type="text" value="100-0006"><br>
+Prefecture <input id="pref" type="text" value=""><br>
+Address <input id="address" type="text" value="">
+
+<p>
+  This is an example of Small IFrame extension pattern that shows response from REST API in an IFrame element.<br>
+  The "Lookup" button was dynamically added by WebExtension when this page was loaded.<br>
+  When you click the button, an AddressLookup REST API is called through proxy.<br>
+  Once the responce came back, a new frame will be opened and the addresses returned are listed.<br>
+  If you change the zopcode to 100-0001 and click the button, the returned address will be set to the from without showing the address list.
+</p>
+
+</body>
+</html>

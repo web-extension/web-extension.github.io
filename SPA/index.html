@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="../WebExtension.js"></script>
+<script src="Page2.js"></script>
+<script src="Page4.js"></script>
+<script src="Page6.js"></script>
+<script src="Page8.js"></script>
+<script>
+function next(step) {
+  const pageNoTag = document.getElementById('pageNo');
+  const pageNo = parseInt(pageNoTag.innerHTML) + (step || 1);
+  pageNoTag.innerHTML = pageNo;
+  render(pageNo);
+}
+
+function prev() {
+  next(-1);
+}
+
+function render(pageNo) {
+  const content = document.getElementById('content');
+  content.innerHTML = "<h2 id='page"+pageNo+"'>Page "+pageNo+"</h2>";
+}
+
+window.onload = function() {
+  render(1);
+};
+</script>
+</head>
+<body>
+
+<button id='prev' onClick='prev();return false;'>Prev</button>
+<span id='pageNo'>1</span>
+<button id='next' onClick='next();return false;'>Next</button>
+<br>
+<div id='content' style='border: 1px solid black; padding: 5px; margin: 10px;'></div>
+
+<p>
+  "Say Hello" button is added on Page 2, 6 and 8.<br>
+  "Say Bye" button is added on Page 4, 6 and 8.
+</p>
+
+</body>
+</html>

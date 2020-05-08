@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="../WebExtensionClient.js"></script>
+<script>
+window.onload = function() {
+  const pass = (window.location.search+'aaaaaaa').substring(1,7);
+  for (let i=1; i<=3; i++) {
+    document.getElementById('password'+i).value = pass + (Math.floor(Math.random() * 900) + 100);
+  }
+};
+
+function selectNewPassword(number) {
+  const newPassword = document.getElementById('password'+number).value;
+  WebExtensionClient.sendResponse('passwordGenerator', newPassword);
+}
+</script>
+</head>
+<body>
+
+<h3>Suggested new passwords</h3>
+
+Password1 <input id="password1" type="text" value=""><button onClick='selectNewPassword(1)'>Select</button><br><br>
+Password2 <input id="password2" type="text" value=""><button onClick='selectNewPassword(2)'>Select</button><br><br>
+Password3 <input id="password3" type="text" value=""><button onClick='selectNewPassword(3)'>Select</button><br><br>
+
+<p>
+  This page generates three recommended passwords based on the original password.<br>
+  Please choose one of the passwords.
+</p>
+
+</body>
+</html>

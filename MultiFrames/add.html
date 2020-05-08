@@ -1,0 +1,25 @@
+<html>
+<head>
+<script src="../WebExtensionClient.js"></script>
+<script>
+window.onload = function() {
+  const query = window.location.search;
+  const number1 = query.substring(1, query.indexOf('&'));
+  document.getElementById('number1').innerHTML = number1;
+};
+
+function add() {
+  const number2 = document.getElementById('number2').value;
+  WebExtensionClient.sendResponse('add', number2);
+}
+</script>
+</head>
+<body>
+
+<h3>Add a number</h3>
+
+<span id="number1"></span> + <input id="number2" type="text" value="1" size="5">
+<button onClick='add()'>Add</button>
+
+</body>
+</html>
